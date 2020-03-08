@@ -49,4 +49,8 @@ export class AuthService {
     const accessToken = await this.jwtService.sign(payload);
     return { user, accessToken };
   }
+
+  async logOut() {
+    this.oneTimePassword = null;
+  }
 }
