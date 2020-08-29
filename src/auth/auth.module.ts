@@ -17,7 +17,7 @@ import { NodemailerModule } from '@iaminfinity/nodemailer';
       secure:  false,
       auth: {
         user: 'selfeducationdiploma@gmail.com',
-        pass: 'diplomaWork1!',
+        pass: 'herokudeploy1?',
       },
     }),
     PassportModule.register({ defaultStrategy: 'jwt'}),
