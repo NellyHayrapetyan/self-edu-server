@@ -5,8 +5,8 @@ import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './jwt-payload.interface';
 import { User } from './user.entity';
-import { NodemailerService } from '@iaminfinity/nodemailer';
-import { MailerService } from '@nest-modules/mailer';
+// import { NodemailerService } from '@iaminfinity/nodemailer';
+// import { MailerService } from '@nest-modules/mailer';
 import { UserDetailsDto } from './dto/user-details.dto';
 import { v1 as uuid } from 'uuid';
 
@@ -18,20 +18,20 @@ export class AuthService {
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
     private jwtService: JwtService,
-    private nodemailerService: NodemailerService,
+    // private nodemailerService: NodemailerService,
   ) {}
 
-  async createUser(userDetailsDto: UserDetailsDto) {
-    const { email } = userDetailsDto;
-    this.oneTimePassword = uuid();
-    this.nodemailerService.sendMail({
-        to: email,
-        subject: 'Account confirmation',
-        text: `One Time Password: ${this.oneTimePassword}`,
-      })
-      .then()
-      .catch();
-  }
+  // async createUser(userDetailsDto: UserDetailsDto) {
+  //   const { email } = userDetailsDto;
+  //   this.oneTimePassword = uuid();
+  //   this.nodemailerService.sendMail({
+  //       to: email,
+  //       subject: 'Account confirmation',
+  //       text: `One Time Password: ${this.oneTimePassword}`,
+  //     })
+  //     .then()
+  //     .catch();
+  // }
 
   async signUp(authCredentialsDto: AuthCredentialsDto) {
     return this.userRepository.signUp(authCredentialsDto, this.oneTimePassword);

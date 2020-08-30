@@ -11,15 +11,15 @@ import { NodemailerModule } from '@iaminfinity/nodemailer';
 
 @Module({
   imports: [
-    NodemailerModule.register({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure:  false,
-      auth: {
-        user: 'selfeducationdiploma@gmail.com',
-        pass: 'herokudeploy1?',
-      },
-    }),
+    // NodemailerModule.register({
+    //   host: 'smtp.gmail.com',
+    //   port: 587,
+    //   secure:  false,
+    //   auth: {
+    //     user: 'selfeducationdiploma@gmail.com',
+    //     pass: 'herokudeploy1?',
+    //   },
+    // }),
     PassportModule.register({ defaultStrategy: 'jwt'}),
     JwtModule.register({
       secret: 'topSecret51',

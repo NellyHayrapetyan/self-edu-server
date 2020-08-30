@@ -14,11 +14,11 @@ export class AuthController {
   signUp(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto) {
     return this.authService.signUp(authCredentialsDto);
   }
-
-  @Post('/create-user')
-  createUser(@Body(ValidationPipe) userDetailsDto: UserDetailsDto) {
-    return this.authService.createUser(userDetailsDto);
-  }
+  //
+  // @Post('/create-user')
+  // createUser(@Body(ValidationPipe) userDetailsDto: UserDetailsDto) {
+  //   return this.authService.createUser(userDetailsDto);
+  // }
 
   @Post('/signin')
   signIn(@Body() authCredentialsDto: AuthCredentialsDto): Promise<{ accessToken: string }> {
